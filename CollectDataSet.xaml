@@ -708,7 +708,7 @@
                       <OutArgument x:TypeArguments="s:String[]">[storeFiles]</OutArgument>
                     </ui:AssignOperation.To>
                     <ui:AssignOperation.Value>
-                      <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(pathDataFolder,"*.xlsx").Where(Function(f) Not path.GetFileName(f).StartsWith("~$")).ToArray]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]">[If(String.IsNullOrEmpty(pathDataFolder), new String(){}, Directory.GetFiles(pathDataFolder,"*.xlsx").Where(Function(f) Not path.GetFileName(f).StartsWith("~$")).ToArray)]</InArgument>
                     </ui:AssignOperation.Value>
                   </ui:AssignOperation>
                   <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">

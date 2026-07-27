@@ -1,0 +1,370 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ValidateConfig" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:njl="clr-namespace:Newtonsoft.Json.Linq;assembly=Newtonsoft.Json" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ConfigFileName" Type="InArgument(x:String)">
+      <x:Property.Attributes>
+        <RequiredArgumentAttribute />
+      </x:Property.Attributes>
+    </x:Property>
+    <x:Property Name="dictJson" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1177,7937</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ValidateConfig_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Dynamic</x:String>
+      <x:String>System.Collections.Specialized</x:String>
+      <x:String>UiPath.Web.Activities</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Extensions.DependencyModel</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>netstandard</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Collections.Specialized</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="ValidateConfig" sap:VirtualizedContainerService.HintSize="1224,7558" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="configFileFullPath" />
+      <Variable x:TypeArguments="x:String" Default="UiPathProjectConfigs" Name="configsFolder" />
+      <Variable x:TypeArguments="x:String" Name="strDataText" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign DisplayName="Make full path to config file" sap:VirtualizedContainerService.HintSize="795,114" sap2010:WorkflowViewState.IdRef="Assign_7">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[configFileFullPath]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), configsFolder, ConfigFileName)]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="795,57" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Make full path to config file" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[configFileFullPath]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[Path.Combine( Left(Directory.GetCurrentDirectory, InStrRev(Directory.GetCurrentDirectory, "\")-1), configsFolder, ConfigFileName)]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="795,173" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Trace" Message="[&quot;Checking config file at &quot; &amp; configFileFullPath]" />
+    <If Condition="[File.Exists(configFileFullPath)]" DisplayName="If config exists" sap:VirtualizedContainerService.HintSize="795,7191" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence DisplayName="Validate" sap:VirtualizedContainerService.HintSize="501,1442" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="njl:JObject" Name="jObj" />
+            <Variable x:TypeArguments="x:String" Name="strProjectPath" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log message" sap:VirtualizedContainerService.HintSize="467,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Config file &quot; &amp; ConfigFileName &amp; &quot; found.&quot;]" />
+          <ui:ReadTextFile Content="[strDataText]" DisplayName="Read Text File" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="467,173" sap2010:WorkflowViewState.IdRef="ReadTextFile_1" />
+          <ui:DeserializeJson x:TypeArguments="njl:JObject" DisplayName="Deserialize JSON" sap:VirtualizedContainerService.HintSize="467,92" sap2010:WorkflowViewState.IdRef="DeserializeJson`1_1" JsonObject="[jObj]" JsonString="[strDataText]" />
+          <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="467,164" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+            <ui:MultipleAssign.AssignOperations>
+              <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[dictJson]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:String)">[Newtonsoft.Json.JsonConvert.DeserializeObject(Of Dictionary(Of string,String))(jObj.tostring)]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+                <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                  <ui:AssignOperation.To>
+                    <OutArgument x:TypeArguments="x:String">[strProjectPath]</OutArgument>
+                  </ui:AssignOperation.To>
+                  <ui:AssignOperation.Value>
+                    <InArgument x:TypeArguments="x:String">[dictJson("ProjectPath").ToString]</InArgument>
+                  </ui:AssignOperation.Value>
+                </ui:AssignOperation>
+              </scg:List>
+            </ui:MultipleAssign.AssignOperations>
+          </ui:MultipleAssign>
+          <ui:IfElseIf DisplayName="Else If con" sap:VirtualizedContainerService.HintSize="467,681" sap2010:WorkflowViewState.IdRef="IfElseIf_5">
+            <ui:IfElseIf.ConditionBlocks>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                <ui:IfElseIfBlock BlockType="If" Condition="[String.IsNullOrEmpty(strProjectPath)]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,453" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:WriteTextFile DisplayName="Write Text File" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="WriteTextFile_4" Text="[Left(Directory.GetCurrentDirectory, InStrRev(Directory.GetCurrentDirectory, &quot;\&quot;)-1)]" />
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="382,107" sap2010:WorkflowViewState.IdRef="MessageBox_5" Text="[&quot;Project Path string is empty.  ZoZo AI has been created one. Please restart application. Checking at: &quot; &amp; configFileFullPath]" />
+                      <TerminateWorkflow DisplayName="Terminate workflow" sap:VirtualizedContainerService.HintSize="382,113" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_5" Reason="[string.Empty]" />
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+              </sc:BindingList>
+            </ui:IfElseIf.ConditionBlocks>
+          </ui:IfElseIf>
+          <ui:Comment sap:VirtualizedContainerService.HintSize="467,99" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Validation here, possibly taking values to OutArguments" />
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <Sequence DisplayName="Handle missing config" sap:VirtualizedContainerService.HintSize="761,5588" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="blCheck" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Comment sap:VirtualizedContainerService.HintSize="727,126" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// However you want to handle it - you could copy default config from project etc. I will just throw a fatal exception" />
+          <ui:PathExists DisplayName="Path Exists" Exists="[blCheck]" sap:VirtualizedContainerService.HintSize="727,223" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), configsFolder)]" PathType="Folder" />
+          <ui:IfElseIf DisplayName="Else If Ktra folder Project Setting" sap:VirtualizedContainerService.HintSize="727,5179" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+            <ui:IfElseIf.ConditionBlocks>
+              <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                <ui:IfElseIfBlock BlockType="If" Condition="[not blCheck]">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence sap2010:Annotation.AnnotationText="Ko thấy:&#xA;1. Tạo folder&#xA;2. Tạo file&#xA;3. Ghi nội dung file" DisplayName="Body" sap:VirtualizedContainerService.HintSize="484,2863" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="450,122" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), configsFolder)]" />
+                      <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="450,173" sap2010:WorkflowViewState.IdRef="CreateFile_2" Name="[ConfigFileName]" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), configsFolder)]" />
+                      <Sequence DisplayName="Write File" sap:VirtualizedContainerService.HintSize="450,2159" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:WriteTextFile DisplayName="Write Text File" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="WriteTextFile_1" Text="{}{" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_1" Text="[&quot;&quot;&quot;ProjectPath&quot;&quot;:&quot;&quot;&quot;+Left(Directory.GetCurrentDirectory, InStrRev(Directory.GetCurrentDirectory, &quot;\&quot;)-1).Replace(&quot;\&quot;,&quot;\\&quot;)+&quot;&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_9" Text="[&quot;&quot;&quot;OnlineMode&quot;&quot;:&quot;&quot;Disable&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_2" Text="[&quot;&quot;&quot;DataFolder&quot;&quot;:&quot;&quot;1. Data&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_3" Text="[&quot;&quot;&quot;TemplateFolder&quot;&quot;:&quot;&quot;2. Templates&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_4" Text="[&quot;&quot;&quot;FileFolder&quot;&quot;:&quot;&quot;3. Files&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_10" Text="[&quot;&quot;&quot;DataSheet&quot;&quot;:&quot;&quot;GoiThau&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_5" Text="[&quot;&quot;&quot;CloseWord&quot;&quot;:&quot;&quot;false&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_6" Text="[&quot;&quot;&quot;TaskManagerProcess&quot;&quot;:&quot;&quot;WINWORD.exe&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_13" Text="[&quot;&quot;&quot;AgentPath&quot;&quot;:&quot;&quot;C:\\FPT\\EGP-AGENT\\egp-edoc-agent.exe&quot;&quot;,&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,173" sap2010:WorkflowViewState.IdRef="AppendLine_8" Text="[&quot;&quot;&quot;ExceptionSheet&quot;&quot;:&quot;&quot;S.&quot;&quot;&quot;]" UseDefaultEncoding="False" />
+                        <ui:AppendLine DisplayName="Append Line" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="416,164" sap2010:WorkflowViewState.IdRef="AppendLine_7" Text="}" UseDefaultEncoding="False" />
+                      </Sequence>
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="450,57" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:WriteTextFile DisplayName="Write Text File" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="WriteTextFile_5" Text="[Left(Directory.GetCurrentDirectory, InStrRev(Directory.GetCurrentDirectory, &quot;\&quot;)-1)]" />
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
+                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="450,107" sap2010:WorkflowViewState.IdRef="MessageBox_4" Text="[&quot;Config Folder and file not found.  ZoZo AI has been created config file. Pls restart app. Checking at: &quot; &amp; configFileFullPath]" />
+                      <TerminateWorkflow DisplayName="Terminate workflow" sap:VirtualizedContainerService.HintSize="450,113" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_4" Reason="[string.Empty]" />
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+                <ui:IfElseIfBlock BlockType="Else">
+                  <ui:IfElseIfBlock.Then>
+                    <Sequence DisplayName="Nếu thấy folder =&gt; ktra file Config" sap:VirtualizedContainerService.HintSize="648,2061" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:PathExists DisplayName="Path Exists" Exists="[blCheck]" sap:VirtualizedContainerService.HintSize="614,231" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[configFileFullPath]" PathType="File" />
+                      <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="614,1770" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+                        <ui:IfElseIf.ConditionBlocks>
+                          <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                            <ui:IfElseIfBlock BlockType="If" Condition="[not blCheck]">
+                              <ui:IfElseIfBlock.Then>
+                                <Sequence sap2010:Annotation.AnnotationText="1. Tạo file&#xA;2. Ghi file" DisplayName="nếu ko thấy file" sap:VirtualizedContainerService.HintSize="416,717" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:CreateFile ContinueOnError="{x:Null}" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="[ConfigFileName]" Path="[Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), configsFolder)]" />
+                                  <ui:WriteTextFile DisplayName="Write Text File" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="354,181" sap2010:WorkflowViewState.IdRef="WriteTextFile_3" Text="[Left(Directory.GetCurrentDirectory, InStrRev(Directory.GetCurrentDirectory, &quot;\&quot;)-1)]" />
+                                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,115" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;File not found.  ZoZo AI has been created config file. Pls restart app. Checking at: &quot; &amp; configFileFullPath]" />
+                                  <TerminateWorkflow DisplayName="Terminate workflow" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_2" Reason="[string.Empty]" />
+                                </Sequence>
+                              </ui:IfElseIfBlock.Then>
+                            </ui:IfElseIfBlock>
+                            <ui:IfElseIfBlock BlockType="Else">
+                              <ui:IfElseIfBlock.Then>
+                                <Sequence DisplayName="nếu thấy file" sap:VirtualizedContainerService.HintSize="563,798" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:ReadTextFile Content="[strDataText]" DisplayName="Read Text File" FileName="[configFileFullPath]" sap:VirtualizedContainerService.HintSize="501,181" sap2010:WorkflowViewState.IdRef="ReadTextFile_2" />
+                                  <ui:IfElseIf DisplayName="Else If" sap:VirtualizedContainerService.HintSize="501,532" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+                                    <ui:IfElseIf.ConditionBlocks>
+                                      <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                                        <ui:IfElseIfBlock BlockType="If" Condition="[String.IsNullOrEmpty(strDataText)]">
+                                          <ui:IfElseIfBlock.Then>
+                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,313" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="354,115" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Path not found. Checking config file at: &quot; &amp; configFileFullPath]" />
+                                              <TerminateWorkflow DisplayName="Terminate workflow" sap:VirtualizedContainerService.HintSize="354,113" sap2010:WorkflowViewState.IdRef="TerminateWorkflow_1" Reason="[string.Empty]" />
+                                            </Sequence>
+                                          </ui:IfElseIfBlock.Then>
+                                        </ui:IfElseIfBlock>
+                                      </sc:BindingList>
+                                    </ui:IfElseIf.ConditionBlocks>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </ui:IfElseIf>
+                                </Sequence>
+                              </ui:IfElseIfBlock.Then>
+                            </ui:IfElseIfBlock>
+                          </sc:BindingList>
+                        </ui:IfElseIf.ConditionBlocks>
+                      </ui:IfElseIf>
+                    </Sequence>
+                  </ui:IfElseIfBlock.Then>
+                </ui:IfElseIfBlock>
+              </sc:BindingList>
+            </ui:IfElseIf.ConditionBlocks>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </ui:IfElseIf>
+        </Sequence>
+      </If.Else>
+    </If>
+  </Sequence>
+</Activity>

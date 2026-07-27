@@ -1,0 +1,11 @@
+'--Hide Columns
+Sub HideColumn(strWorkSheet As String, strRange As String)
+Sheets(strWorkSheet).Select
+Range(strRange).EntireColumn.Hidden = True
+End Sub
+
+
+'--UnHide Columns
+Sub UnHideColumn()
+Columns.EntireColumn.Hidden = False
+End Sub

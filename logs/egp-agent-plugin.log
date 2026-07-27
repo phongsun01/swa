@@ -1,0 +1,50 @@
+2024-11-19 08:38:56.142  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : osName: Windows 10
+2024-11-19 08:38:56.161 DEBUG 21708 --- [Thread-11] c.f.egp.manager.worker.UploadFileWorker  : UploadFileWorker1 started!
+2024-11-19 08:38:56.164 DEBUG 21708 --- [Thread-25] c.f.e.m.worker.DownloadChunkShareWorker  : DownloadChunkShareWorker3 started!
+2024-11-19 08:38:56.164 DEBUG 21708 --- [Thread-26] c.f.e.m.worker.DownloadFolderWorker      : DownloadFolderWorker started!
+2024-11-19 08:38:56.164 DEBUG 21708 --- [Thread-22] c.f.e.m.worker.DownloadChunkWorker       : DownloadChunkWorker2 started!
+2024-11-19 08:38:56.164 DEBUG 21708 --- [Thread-21] c.f.e.m.worker.DownloadChunkShareWorker  : DownloadChunkShareWorker1 started!
+2024-11-19 08:38:56.163 DEBUG 21708 --- [Thread-20] c.f.e.m.worker.DownloadChunkWorker       : DownloadChunkWorker1 started!
+2024-11-19 08:38:56.164 DEBUG 21708 --- [Thread-24] c.f.e.m.worker.DownloadChunkWorker       : DownloadChunkWorker3 started!
+2024-11-19 08:38:56.164 DEBUG 21708 --- [Thread-23] c.f.e.m.worker.DownloadChunkShareWorker  : DownloadChunkShareWorker2 started!
+2024-11-19 08:38:56.163 DEBUG 21708 --- [Thread-19] c.f.e.m.worker.DownloadFileShareWorker   : DownloadFileShareWorker2 started!
+2024-11-19 08:38:56.163 DEBUG 21708 --- [Thread-17] c.f.e.m.worker.DownloadFileShareWorker   : DownloadFileShareWorker1 started!
+2024-11-19 08:38:56.163 DEBUG 21708 --- [Thread-18] c.f.e.manager.worker.DownloadFileWorker  : DownloadFileWorker2 started!
+2024-11-19 08:38:56.163 DEBUG 21708 --- [Thread-16] c.f.e.manager.worker.DownloadFileWorker  : DownloadFileWorker1 started!
+2024-11-19 08:38:56.162 DEBUG 21708 --- [Thread-14] c.f.e.manager.worker.UploadChunkWorker   : UploadChunkWorker2 started!
+2024-11-19 08:38:56.162 DEBUG 21708 --- [Thread-13] c.f.e.manager.worker.UploadChunkWorker   : UploadChunkWorker1 started!
+2024-11-19 08:38:56.162 DEBUG 21708 --- [Thread-15] c.f.e.manager.worker.UploadChunkWorker   : UploadChunkWorker3 started!
+2024-11-19 08:38:56.161 DEBUG 21708 --- [Thread-12] c.f.egp.manager.worker.UploadFileWorker  : UploadFileWorker2 started!
+2024-11-19 08:38:56.166 DEBUG 21708 --- [Thread-27] c.f.e.manager.worker.UsbDetectedWorker   : UsbDetectedWorker started!
+2024-11-19 08:38:56.167  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : Start agent app. Starting daemon server
+2024-11-19 08:38:56.168 DEBUG 21708 --- [Thread-28] c.fis.egp.manager.worker.UpgradeWorker   : UpgradeWorker started!
+2024-11-19 08:38:56.192  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : -----Username before: Admin
+2024-11-19 08:38:56.193  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : -----Username after: Admin
+2024-11-19 08:38:56.193  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : -----Home: C:\Users\Admin
+2024-11-19 08:38:56.193  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : -----Hostname of local machine: DESKTOP-R2PRNM0
+2024-11-19 08:38:56.194  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : -----Current working directory: C:\Users\Admin\Box\Tai lieu - Phong\Study2\Word13.12_Windows
+2024-11-19 08:38:56.194 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : -----downloadPath: C:\Users\Admin\Downloads\
+2024-11-19 08:38:56.405  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : -----PUBLIC_IP: 59.153.251.192, PRIVATE_IP: 192.168.43.209
+2024-11-19 08:38:56.405  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : -----Hostname of local machine: DESKTOP-R2PRNM0
+2024-11-19 08:38:56.406  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : Configuration.PATH_FOLDER_STORE: C:\Users\Admin\Box\Tai lieu - Phong\Study2\Word13.12_Windows
+2024-11-19 08:38:56.407  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : Configuration.UPLOAD_FOLDER: C:\Users\Admin\Box\Tai lieu - Phong\Study2\Word13.12_Windows\UPLOAD
+2024-11-19 08:38:56.407  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : Configuration.UPLOADING_FOLDER: C:\Users\Admin\Box\Tai lieu - Phong\Study2\Word13.12_Windows\UPLOADING
+2024-11-19 08:38:56.407  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : Configuration.DOWNLOAD_FOLDER: C:\Users\Admin\Box\Tai lieu - Phong\Study2\Word13.12_Windows\DOWNLOAD
+2024-11-19 08:38:56.407  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : Configuration.TMP_FOLDER: C:\Users\Admin\Box\Tai lieu - Phong\Study2\Word13.12_Windows\TEMP
+2024-11-19 08:38:56.440  INFO 21708 --- [main] com.fis.egp.ServiceApp                   : Id: com.fis.egp:egp-edoc-agent:jar:1.0.4, Name: egp-edoc-agent, GroupId: com.fis.egp, ArtifactId: egp-edoc-agent, Version: 1.0.4
+2024-11-19 08:38:56.444 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : ===========================================
+2024-11-19 08:38:56.445 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : ---Environment config Application(environment=Environment [env=PROD, mode=null, dev_proxy_route=/api/edocproxy, dev_proxy_unau_route=/api/unau/edocproxy, proxy_route=/edoc-proxy-service/api, proxy_unau_route=/edoc-proxy-service/api/un-security, um_route=/api/umv3])
+2024-11-19 08:38:56.445 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : ---egp-domain https://muasamcong.mpi.gov.vn
+2024-11-19 08:38:56.445 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : ---edoc-domain https://filemsc.muasamcong.gov.vn
+2024-11-19 08:38:56.445 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : ---proxy route /edoc-proxy-service/api
+2024-11-19 08:38:56.446 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : ---proxy unau route /edoc-proxy-service/api/un-security
+2024-11-19 08:38:56.446 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : ===========================================
+2024-11-19 08:38:56.607 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : config system tray: com.fis.egp.config.TrayIconConfig@6495f1
+2024-11-19 08:38:56.608  WARN 21708 --- [main] com.fis.egp.ServiceApp                   : He thong dau mang dau thay quoc gia dang hoat dong.
+2024-11-19 08:38:56.608 DEBUG 21708 --- [main] com.fis.egp.ServiceApp                   : da load cau hinh cac moi truong.
+2024-11-19 08:39:56.709  INFO 21708 --- [Thread-28] c.f.egp.manager.utils.CheckUpdateUtils   : Current version: 1.0.4, server version: 1.0.4
+2024-11-19 08:49:57.187  INFO 21708 --- [Thread-28] c.f.egp.manager.utils.CheckUpdateUtils   : Current version: 1.0.4, server version: 1.0.4
+2024-11-19 08:59:57.587  INFO 21708 --- [Thread-28] c.f.egp.manager.utils.CheckUpdateUtils   : Current version: 1.0.4, server version: 1.0.4
+2024-11-19 09:09:57.947  INFO 21708 --- [Thread-28] c.f.egp.manager.utils.CheckUpdateUtils   : Current version: 1.0.4, server version: 1.0.4
+2024-11-19 09:19:58.310  INFO 21708 --- [Thread-28] c.f.egp.manager.utils.CheckUpdateUtils   : Current version: 1.0.4, server version: 1.0.4
+2024-11-19 09:29:58.863  INFO 21708 --- [Thread-28] c.f.egp.manager.utils.CheckUpdateUtils   : Current version: 1.0.4, server version: 1.0.4

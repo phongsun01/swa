@@ -1,0 +1,35 @@
+{
+  "exportedBy": null,
+  "bundleHash": null,
+  "version": "1.0.0.0",
+  "jitAssemblyCompilerCommands": [
+    {
+      "providerName": "TypedDataTable",
+      "typedDataTableDto": {
+        "id": 1,
+        "idRef": "ReadRangeConnections`1_1",
+        "hash": "ReadRangeConnections`1_1|DataTable|0QQNaWZFm2CbWd36wqP3NcK4gJW9kWaiQxQDfqLlT0",
+        "dataType": "System.Data.DataTable, System.Data.Common",
+        "columns": [
+          {
+            "columnName": "TT",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Key",
+            "dataType": "System.String, System.Private.CoreLib"
+          },
+          {
+            "columnName": "Value",
+            "dataType": "System.String, System.Private.CoreLib"
+          }
+        ]
+      },
+      "entityAssemblyKey": {
+        "name": "Studio.Generated.TypedDataTable1",
+        "hash": "ReadRangeConnections`1_1|DataTable|hEsNgekE5nphNyAbOYQowgvA4VbJuMW5gH9XT8uE",
+        "assemblyName": "Studio.Generated.TypedDataTable1"
+      }
+    }
+  ]
+}

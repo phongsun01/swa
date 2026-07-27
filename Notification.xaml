@@ -3,6 +3,7 @@
     <x:Property Name="form" Type="InOutArgument(swf:Form)" />
     <x:Property Name="lblAlerts" Type="InOutArgument(swf:Label)" />
     <x:Property Name="comments" Type="OutArgument(x:String)" />
+    <x:Property Name="appName" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
@@ -122,7 +123,7 @@
         <OutArgument x:TypeArguments="x:String">[comments]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">["Hello "+Environment.UserName+","+Environment.NewLine+"ZoZo AI has been started. Pls wait!"]</InArgument>
+        <InArgument x:TypeArguments="x:String">["Hello "+Environment.UserName+","+Environment.NewLine+appName+" has been started. Pls wait!"]</InArgument>
       </Assign.Value>
     </Assign>
     <Sequence DisplayName="Invoke Code" sap:VirtualizedContainerService.HintSize="486,669" sap2010:WorkflowViewState.IdRef="Sequence_6">
@@ -139,7 +140,7 @@
           <InArgument x:TypeArguments="swf:Form">[New System.Windows.forms.form]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:InvokeCode ContinueOnError="{x:Null}" Code="            System.Windows.Forms.Application.Exit()&#xA;            lblFname = New System.Windows.Forms.Label()&#xA;            lblFname.AutoSize = True&#xA;            lblFname.ForeColor = System.Drawing.Color.White&#xA;            lblFname.Location = New System.Drawing.Point(24, 43)&#xA;            lblFname.Name = &quot;lblFname&quot;&#xA;            lblFname.Size = New System.Drawing.Size(38, 13)&#xA;            lblFname.TabIndex = 0&#xA;            lblFname.Text = FullName.Trim&#xA;&#xA;&#xA;            form= New System.Windows.forms.form&#xA;            form.Text=&quot;ZoZo AI notify&quot;&#xA;            form.TopMost = True&#xA;            form.AutoSize = False&#xA;   form.BackColor = System.Drawing.SystemColors.Highlight&#xA;            form.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)&#xA;   form.Font = New System.Drawing.Font(&quot;Times New Roman&quot;, 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)&#xA;            form.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font&#xA;            form.ClientSize = New System.Drawing.Size(300, 100)&#xA;            form.StartPosition = FormStartPosition.Manual&#xA;   &#xA;            form.Location = New Point(Screen.PrimaryScreen.WorkingArea.Width - form.Width, &#xA;            Screen.PrimaryScreen.WorkingArea.Height - form.Height)&#xA;            form.Controls.Add(lblFname)&#xA;            form.Name = &quot;Form1&quot;&#xA;            form.Show()" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="452,197" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
+      <ui:InvokeCode ContinueOnError="{x:Null}" Code="            System.Windows.Forms.Application.Exit()&#xA;            lblFname = New System.Windows.Forms.Label()&#xA;            lblFname.AutoSize = True&#xA;            lblFname.ForeColor = System.Drawing.Color.White&#xA;            lblFname.Location = New System.Drawing.Point(24, 43)&#xA;            lblFname.Name = &quot;lblFname&quot;&#xA;            lblFname.Size = New System.Drawing.Size(38, 13)&#xA;            lblFname.TabIndex = 0&#xA;            lblFname.Text = FullName.Trim&#xA;&#xA;&#xA;            form= New System.Windows.forms.form&#xA;            form.Text=AppName &amp; &quot; notify&quot;&#xA;            form.TopMost = True&#xA;            form.AutoSize = False&#xA;   form.BackColor = System.Drawing.SystemColors.Highlight&#xA;            form.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)&#xA;   form.Font = New System.Drawing.Font(&quot;Times New Roman&quot;, 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)&#xA;            form.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font&#xA;            form.ClientSize = New System.Drawing.Size(300, 100)&#xA;            form.StartPosition = FormStartPosition.Manual&#xA;   &#xA;            form.Location = New Point(Screen.PrimaryScreen.WorkingArea.Width - form.Width, &#xA;            Screen.PrimaryScreen.WorkingArea.Height - form.Height)&#xA;            form.Controls.Add(lblFname)&#xA;            form.Name = &quot;Form1&quot;&#xA;            form.Show()" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="452,197" sap2010:WorkflowViewState.IdRef="InvokeCode_10">
         <ui:InvokeCode.Arguments>
           <InOutArgument x:TypeArguments="swf:Label" x:Key="lblFname">[lblAlerts]</InOutArgument>
           <InArgument x:TypeArguments="sd:SizeF" x:Key="AutoScaleDimensions" />
@@ -148,6 +149,7 @@
           <InArgument x:TypeArguments="swf:Control" x:Key="Controls" />
           <InOutArgument x:TypeArguments="swf:Form" x:Key="form">[form]</InOutArgument>
           <InOutArgument x:TypeArguments="x:String" x:Key="FullName">[comments]</InOutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="AppName">[appName]</InArgument>
         </ui:InvokeCode.Arguments>
       </ui:InvokeCode>
       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="452,275" sap2010:WorkflowViewState.IdRef="CommentOut_2">

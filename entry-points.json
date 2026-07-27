@@ -9,7 +9,9 @@
         "type": "object",
         "properties": {
           "strConfigFileName": {
-            "type": "string"
+            "type": "string",
+            "x-default-expression": "\"Config-5.txt\"",
+            "default": "Config-5.txt"
           }
         },
         "required": []

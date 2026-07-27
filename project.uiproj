@@ -1,0 +1,6 @@
+{
+  "Name": "Word13.12_Windows",
+  "ProjectType": "Process",
+  "Description": "Start with a blank project to design a new task automation",
+  "MainFile": "Main.xaml"
+}
